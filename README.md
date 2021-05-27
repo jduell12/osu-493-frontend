@@ -1,5 +1,7 @@
 # portfolio-form
 
+Register and login form setup for OSU 493 Portfolio assignment.
+
 ## Project setup
 ```
 npm install
