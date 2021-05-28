@@ -72,9 +72,11 @@ export default {
         last_name: this.lastName,
       };
       axios
-        .post("//localhost:5000/users/register", userObj)
+        .post(
+          "https://osu-493-portfolio.ue.r.appspot.com/users/register",
+          userObj
+        )
         .then((res) => {
-          console.log(res.data);
           this.users.push(res.data);
         })
         .catch((e) => {

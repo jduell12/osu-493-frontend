@@ -49,14 +49,13 @@ export default {
         password: this.password,
       };
       axios
-        .post("//localhost:5000/users/login", userObj)
+        .post("https://osu-493-portfolio.ue.r.appspot.com/users/login", userObj)
         .then((res) => {
           this.users.push(res.data);
         })
         .catch((e) => {
           console.log(e);
         });
-      console.log(userObj);
     },
   },
 };
