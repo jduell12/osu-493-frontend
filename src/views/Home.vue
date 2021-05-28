@@ -22,7 +22,9 @@
       <button>Submit</button>
     </form>
     <div v-if="users.length">
-      <p v-for="user in users" :key="user.id">{{ user }}</p>
+      <p>User id: {{ users[0].id }}</p>
+      <p>Username: {{ users[0].username }}</p>
+      <p>Token: {{ users[0].token }}</p>
     </div>
   </div>
 </template>
@@ -47,10 +49,9 @@ export default {
         password: this.password,
       };
       axios
-        .get("http://localhost:5000/users")
+        .post("//localhost:5000/users/login", userObj)
         .then((res) => {
-          this.users = res.data;
-          console.log(res.data);
+          this.users.push(res.data);
         })
         .catch((e) => {
           console.log(e);
