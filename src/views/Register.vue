@@ -77,6 +77,7 @@ export default {
           userObj
         )
         .then((res) => {
+          console.log(res.data)
           this.users.push(res.data);
         })
         .catch((e) => {
