@@ -51,7 +51,18 @@ export default {
       axios
         .post("https://osu-493-portfolio.ue.r.appspot.com/users/login", userObj)
         .then((res) => {
-          console.log(res.data)
+          // in your authentication promise handler or callback
+        pendo.initialize({
+         visitor: {
+        id:              res.data.id   // Required if user is logged in
+        username: res.data.username
+    },
+
+    account: {
+        id:           res.data.id // Highly recommended
+
+    }
+});
           this.users.push(res.data);
         })
         .catch((e) => {
