@@ -77,7 +77,20 @@ export default {
           userObj
         )
         .then((res) => {
-          console.log(res.data)
+          // in your authentication promise handler or callback
+pendo.initialize({
+    visitor: {
+        id:              res.data.id  // Required if user is logged in
+        email:            res.data.email
+        first_name: res.data.first_name
+        last_name: res.data.last_name
+    },
+
+    account: {
+        id:           res.data.id // Highly recommended
+        name: res.data.first_name + ' ' + res.data.last_name
+    }
+});
           this.users.push(res.data);
         })
         .catch((e) => {
