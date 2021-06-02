@@ -51,6 +51,7 @@ export default {
       axios
         .post("https://osu-493-portfolio.ue.r.appspot.com/users/login", userObj)
         .then((res) => {
+          console.log(res.data)
           this.users.push(res.data);
         })
         .catch((e) => {
